@@ -98,30 +98,6 @@
   }
 
   /**
-   * Barra flotante "Vota por mí": se muestra al hacer scroll hacia abajo.
-   */
-  function initVoteBar() {
-    var voteBar = document.getElementById("vote-bar");
-    var hero = document.getElementById("hero");
-    if (!voteBar || !hero) return;
-
-    var heroHeight = hero.offsetHeight;
-    var scrollThreshold = Math.min(heroHeight * 0.6, 400);
-
-    function updateVoteBar() {
-      if (window.scrollY > scrollThreshold) {
-        voteBar.classList.add("is-visible");
-      } else {
-        voteBar.classList.remove("is-visible");
-      }
-    }
-
-    window.addEventListener("scroll", function () {
-      requestAnimationFrame(updateVoteBar);
-    }, { passive: true });
-  }
-
-  /**
    * Animaciones al hacer scroll: muestra elementos cuando entran en viewport.
    */
   function initScrollAnimations() {
@@ -151,7 +127,6 @@
     }
     initSuggestions();
     initScrollAnimations();
-    initVoteBar();
   }
 
   if (document.readyState === "loading") {
