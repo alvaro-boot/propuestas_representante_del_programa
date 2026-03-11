@@ -971,15 +971,19 @@ ul, ol {
     text-align: center;
   }
 
-  .hero-text {
-    align-items: center;
-    text-align: center;
+  /* En móvil: foto arriba, texto (persona indicada) debajo */
+  .hero-photo {
+    order: -1;
+    display: flex;
+    margin-top: 0;
+    margin-bottom: var(--space-6);
+    max-width: min(280px, 78vw);
   }
 
-  .hero-photo {
-    display: flex;
-    margin-top: var(--space-6);
-    max-width: min(280px, 78vw);
+  .hero-text {
+    order: 0;
+    align-items: center;
+    text-align: center;
   }
 
   .hero-photo img {
